@@ -9,71 +9,71 @@
 </head>
   <body>
     <div class="container">
-      <h1>Le jeu du + ou -</h1>
-      <div class="consigne">
-        <p>Le principe est simple : l'ordinateur choisit un nombre au hasard, plus petit ou égal à 100.</p>
-        <br>
-        <p>Le but est de deviner ce nombre. À chaque fois qu'on propose un nombre, on indique si le nombre à deviner est plus petit ou plus grand que celui-ci.</p>
-        <br>
-        <p>Le jeu se déroule donc ainsi :</p>
+      <div class="global">
+        <h1>Le jeu du + ou -</h1>
+        <div class="consigne">
+          <p>Le principe est simple : l'ordinateur choisit un nombre au hasard, plus petit ou égal à 100. Le but est de deviner ce nombre. À chaque fois qu'on propose un nombre, on indique si le nombre à deviner est plus petit ou plus grand que celui-ci.</p>
+          <br>
+          <p>Le jeu se déroule donc ainsi :</p>
 
-        <ul>
-          <li>Choix d'un nombre aléatoire ;</li>
-          <li>On demande des nombres, et on indique si le nombre à trouver est plus grand ou plus petit que ceux proposés ;</li>
-          <li>Quand l'utilisateur a gagné, on affiche le nombre de coups qu'il lui a fallu.</li>
-        </ul>
+          <ul>
+            <li>Choix d'un nombre aléatoire ;</li>
+            <li>On demande des nombres, et on indique si le nombre à trouver est plus grand ou plus petit que ceux proposés ;</li>
+            <li>Quand l'utilisateur a gagné, on affiche le nombre de coups qu'il lui a fallu.</li>
+          </ul>
+        </div>
+        <div id="indic">
+          <h3>Indications Plus / Moins</h3>
+          <input type="text" id="number" name="number" placeholder="Saississez votre nombre...">
+          <div id="indication"></div>
+          <div id="compteur"></div>
+          <button type="button" name="button" onclick="myFunction()">Envoyer</button>
+        </div>
+
+  <script>
+
+      var min = +1;
+      var max = 100;
+      var nb = Math.floor(Math.random() * (max - min +1)) + min;
+      console.log(nb);
+      var resultat = false;
+      var i = 0;
+
+      function myFunction() {
+        var nb_util = document.getElementById('number').value;
+        compare(nb_util, nb);
+      }
+      function compare(nb_util, nb) {
+        if (isNaN(nb_util) || nb_util == "") {
+          alert("Erreur, veuillez saisir un nombre !!!");
+        }
+        else {
+          if (nb_util > nb)
+          {
+            document.getElementById('indication').innerHTML = "C'est moins. Essaye encore !!!";
+            // alert("C'est moins !!!");
+            i = i + 1;
+          }
+          else if (nb_util < nb)
+          {
+            // alert("C'est plus !!!");
+            document.getElementById('indication').innerHTML = "C'est plus. Essaye encore !!!";
+            i = i + 1;
+          }
+          else {
+            resultat = true;
+            i = i + 1;
+            document.getElementById('compteur').innerHTML = "Vous avez réussi en "+ i +" fois !!!<img src='img/victoire.jpg'>";
+            alert("C'est gagné !!!");
+            // i++;
+          }
+        }
+
+        console.log(i);
+      }
+
+  </script>
       </div>
-
-      <input type="text" id="number" name="number" placeholder="Saississez votre nombre...">
-      <button type="button" name="button" onclick="myFunction()">Envoyer</button>
-
-<script>
-
-    var min = +1;
-    var max = 100;
-    var nb = Math.floor(Math.random() * (max - min +1)) + min;
-    var resultat = false;
-    var i = 0;
-
-    function myFunction() {
-      var nb_util = document.getElementById('number').value;
-      compare(nb_util, nb);
-    }
-    function compare(nb_util, nb) {
-      if (nb_util > nb)
-      {
-        alert("C'est moins !!!");
-        i = i + 1;
-      }
-      else if (nb_util < nb)
-      {
-        alert("C'est plus !!!");
-        i = i + 1;
-      }
-      else if (isNaN(nb_util)) {
-        alert("Erreur, veuillez saisir un nombre !!!");
-      }
-      else {
-        alert("C'est gagné !!!");
-        resultat = true;
-        i = i + 1;
-        // i++;
-      }
-
-      console.log(i);
-    }
-    // while(resultat == false)
-    // {
-    //   var nb_util = prompt("Saisissez un nombre au hasard !");
-    //
-    // }
-
-    // function myFunction() {
-    //         alert('')
-    //       }
-
-</script>
-
     </div>
   </body>
 </html>

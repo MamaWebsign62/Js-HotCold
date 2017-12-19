@@ -6,25 +6,78 @@
   margin: 0 auto;
   width: 80%;
 }
+.global {
+  margin-top: 175px;
+  border-radius: 20%;
+}
 h1 {
-  background-color: #d3d3d3;
-  width: 100%;
+  background-color: #a9a9a9;
+  width: 96%;
   height: 5%;
   padding: 1% 2%;
   text-align: left;
-  font-size: 20px;
+  font-size: 24px;
+  color: #fff;
 }
 .consigne {
   padding: 2%;
-  width: 100%;
-  background-color: #a9a9a9;
+  width: 66%;
+  background-color: #d3d3d3;
   height: auto;
   margin: 0 0 100px 0;
+  float: left;
   clear: both;
 }
 .consigne p {
   text-align: justify;
 }
+.consigne p:first-child {
+    line-height: 23.3px;
+}
 ul {
-  margin: 20px 0 100px 50px;
+  margin: 20px 0 10px 50px;
+}
+li {
+    line-height: 23px;
+}
+#indic {
+  width: 26%;
+  float: left;
+  background-color: rgba(255, 0, 130);
+  padding: 2%;
+  height: 228px;
+}
+#indication {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+}
+p, h1, h3, li, #indication, #compteur {
+  font-family: 'Arial';
+}
+h3 {
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#number {
+  text-align: center;
+  margin: 0 0 25px 14px;
+}
+button {
+
+    float: right;
+    margin-right: 16px;
+    background-color: grey;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-top: 37px;
+}
+#compteur {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
 }
