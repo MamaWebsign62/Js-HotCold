@@ -21,13 +21,13 @@
             <li>On demande des nombres, et on indique si le nombre à trouver est plus grand ou plus petit que ceux proposés ;</li>
             <li>Quand l'utilisateur a gagné, on affiche le nombre de coups qu'il lui a fallu.</li>
           </ul>
+          <input type="text" id="number" name="number" placeholder="Saississez votre nombre...">
+          <button type="button" name="button" onclick="myFunction()">Envoyer</button>
         </div>
         <div id="indic">
           <h3>Indications Plus / Moins</h3>
-          <input type="text" id="number" name="number" placeholder="Saississez votre nombre...">
           <div id="indication"></div>
           <div id="compteur"></div>
-          <button type="button" name="button" onclick="myFunction()">Envoyer</button>
         </div>
 
   <script>
@@ -42,6 +42,7 @@
       function myFunction() {
         var nb_util = document.getElementById('number').value;
         compare(nb_util, nb);
+        console.log(nb_util);
       }
       function compare(nb_util, nb) {
         if (isNaN(nb_util) || nb_util == "") {
@@ -53,6 +54,7 @@
             document.getElementById('indication').innerHTML = "C'est moins. Essaye encore !!!";
             // alert("C'est moins !!!");
             i = i + 1;
+            console.log(i + "°tour");
           }
           else if (nb_util < nb)
           {
@@ -63,7 +65,10 @@
           else {
             resultat = true;
             i = i + 1;
+            console.log(i + " ° tour");
+            document.getElementById('indication').innerHTML = "";
             document.getElementById('compteur').innerHTML = "Vous avez réussi en "+ i +" fois !!!<img src='img/victoire.jpg'>";
+            console.log(compteur + "° tour");
             alert("C'est gagné !!!");
             // i++;
           }
