@@ -61,8 +61,7 @@
             // alert("C'est plus !!!");
             document.getElementById('indication').innerHTML = "C'est plus. Essaye encore !!!";
             i = i + 1;
-          }
-          else {
+          }else {
             resultat = true;
             i = i + 1;
             console.log(i + " ° tour");
@@ -70,6 +69,22 @@
             document.getElementById('compteur').innerHTML = "Vous avez réussi en "+ i +" fois !!!<img src='img/victoire.jpg'>";
             alert("C'est gagné !!!");
             // i++;
+          }
+          if (i == 5)
+          {
+            if (nb.toString().slice(-1)==0){
+              var hint_max = nb;
+            }
+            else
+            {
+              var hint_max = (10 - nb.toString().slice(-1)) + nb;
+            }
+            var hint_min = hint_max - 9;
+            console.log(hint_min+"=>"+hint_max);
+          }
+          else if (i >= 10)
+          {
+            alert("Vous avez perdu !!!");
           }
         }
 
